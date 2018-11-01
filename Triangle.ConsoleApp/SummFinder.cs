@@ -85,7 +85,7 @@ namespace Triangle.ConsoleApp
                     Console.BackgroundColor = ConsoleColor.Black;
                     doBackwardStep = false;
 
-                    rowIndex = backwardStep.RowIndex + 1; // Start from the next row index.
+                    rowIndex = backwardStep.RowIndex; // Start from the next row index.
                     binaryTreeStartColIndex = backwardStep.ColIndex + 1; // Start from the next column index.
                     binaryTreeColIndex = 1; // Start from the next internal tree index.
 
@@ -139,12 +139,11 @@ namespace Triangle.ConsoleApp
                             var hasAvailableChoice = false;
                             if (binaryTreeColIndex < binaryTreeThreshold &&
                                 colIndex < row.Length - 1 &&
-                                rowIndex < Array.Length - 1)
+                                rowIndex < Array.Length)
                             {
                                 var nextValue = row[colIndex + 1];
                                 hasAvailableChoice = isEven(nextValue);
                             }
-                            
                             ProcessPaths(hasAvailableChoice, colIndex, rowIndex, valList);
                             break;
                         }
@@ -161,7 +160,7 @@ namespace Triangle.ConsoleApp
                             var hasAvailableChoice = false;
                             if (binaryTreeColIndex < binaryTreeThreshold &&
                                 colIndex < row.Length - 1 &&
-                                rowIndex < Array.Length - 1)
+                                rowIndex < Array.Length)
                             {
                                 var nextValue = row[colIndex + 1];
                                 hasAvailableChoice = !isEven(nextValue);
@@ -232,7 +231,7 @@ namespace Triangle.ConsoleApp
                 {
                     ColIndex = colIndex,
                     RowIndex = rowIndex,
-                    Sum = valList.Sum()
+                    Sum = valList.Take(valList.Count - 1).Sum()
                 });
                 Console.Write(" Has available choice. Save location.");
             }

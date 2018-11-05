@@ -13,7 +13,6 @@ namespace Triangle.Core
     {
         protected internal bool IsInitialized { get; set; }
         
-        [ExcludeFromCodeCoverage]
         protected internal ISummFinderLogger Logger { get; set; }
 
         /// <summary>
@@ -33,13 +32,11 @@ namespace Triangle.Core
         /// </summary>
         protected internal int[][] Array = null;
         
-        [ExcludeFromCodeCoverage]
         public SummFinder(ISummFinderLogger logger = null)
         {
             Logger = logger;
         }
         
-        [ExcludeFromCodeCoverage]
         protected internal void ResetState()
         {
             SuccessfulPathCount = 0;
@@ -69,7 +66,6 @@ namespace Triangle.Core
             return array;
         }
 
-        [ExcludeFromCodeCoverage]
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="InvalidDataException"></exception>
         protected internal static void ThrowIfInvalidArray(int[][] array)
@@ -82,7 +78,6 @@ namespace Triangle.Core
 
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="FileNotFoundException"></exception>
-        [ExcludeFromCodeCoverage]
         protected internal static void ThrowIfFileInfoNullOrNotExists(FileInfo fileInfo)
         {
             if (fileInfo == null)
@@ -339,7 +334,6 @@ namespace Triangle.Core
             return maxSumm;
         }
         
-        [ExcludeFromCodeCoverage]
         protected internal void LogStartPath(int pathCount)
         {
             Logger?.WriteLine($"\tStart path {pathCount}\t", ConsoleColor.Green, ConsoleColor.Black);
@@ -384,7 +378,6 @@ namespace Triangle.Core
             return number % 2 == 0;
         }
         
-        [ExcludeFromCodeCoverage]
         protected internal void LogArray(int[][] arr)
         {
             foreach (var ints in arr)

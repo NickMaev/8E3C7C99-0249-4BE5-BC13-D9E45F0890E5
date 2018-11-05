@@ -6,7 +6,6 @@ namespace Triangle.Core
     /// <summary>
     /// Logger which sinks to console with colors.
     /// </summary>
-    [ExcludeFromCodeCoverage]
     public class SummFinderConsoleLogger : ISummFinderLogger
     {
         public void Write(string text, ConsoleColor? backgroundColor = null, ConsoleColor? fontColor = null)

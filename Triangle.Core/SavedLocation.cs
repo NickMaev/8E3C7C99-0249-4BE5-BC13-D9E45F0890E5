@@ -6,7 +6,6 @@ namespace Triangle.Core
     /// <summary>
     /// Represents location in the triangle with traveled path.
     /// </summary>
-    [ExcludeFromCodeCoverage]
     public class SavedLocation
     {
         public int RowIndex { get; set; }

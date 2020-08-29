@@ -18,6 +18,7 @@ input (as a file,or constants directly inside the code) for your implementation 
 * 131 171 522 137 217 224 291 413 528 520 227 229 928
 * 223 626 034 683 839 052 627 310 713 999 629 817 410 121
 * 924 622 911 233 325 139 721 218 253 223 107 233 230 124 233
+
 Note that, each node has only two children here (except the bottom row). As an example, you can
 walk from 215 to 124 or 192, and then from 124 to 269, since 442 is even just like its parent. From
 124 you cannot go to 117 because it is not a direct child of 124.
